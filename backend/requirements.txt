@@ -1,4 +1,23 @@
-fastapi
-uvicorn
-easyocr
-paddleocr
+# Web framework
+fastapi==0.100.0
+uvicorn==0.23.0
+
+# OCR libraries
+easyocr==1.6.2
+paddleocr==2.6.1
+pytesseract==0.3.10
+
+# Image processing
+pdf2image==1.16.3
+Pillow==10.0.0
+numpy==1.25.2
+
+# Supabase client
+supabase==0.4.4
+
+# Transformers for AI models
+transformers==4.31.0
+torch==2.0.1  # Installez la version compatible avec votre GPU/CPU
+
+# Optionnel : si vous utilisez des modèles quantifiés pour une meilleure performance
+bitsandbytes==0.39.1
