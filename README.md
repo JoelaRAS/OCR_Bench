@@ -1,5 +1,10 @@
 # OCR-Benchmarker
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-latest-green)
+![React](https://img.shields.io/badge/React-Next.js-blue)
+![Supabase](https://img.shields.io/badge/Supabase-latest-orange)
+
 OCR-Benchmarker is a comprehensive application designed to compare the performance of three OCR engines: Tesseract, EasyOCR, and PaddleOCR. The project extracts text from PDF files, compares results in terms of accuracy and speed, and stores these results in a Supabase database.
 
 ## Table of Contents
@@ -8,6 +13,10 @@ OCR-Benchmarker is a comprehensive application designed to compare the performan
 - [Objectives](#objectives)
 - [Architecture Overview](#architecture-overview)
 - [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Tesseract and Poppler Configuration](#tesseract-and-poppler-configuration)
+  - [Backend Deployment](#backend-deployment)
+  - [Frontend Deployment](#frontend-deployment)
 - [Database Structure](#database-structure)
 - [Code Functionality](#code-functionality)
 - [Technical Choices Justification](#technical-choices-justification)
@@ -64,12 +73,21 @@ The application is divided into three main parts:
 ### Tesseract and Poppler Configuration
 
 1. **Install Tesseract**:
-   - Windows: Download Tesseract and configure the path in `pytesseract.pytesseract.tesseract_cmd`.
+   - Windows: Download Tesseract and configure the path:
+     ```python
+     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+     ```
    - MacOS/Linux: Use a package manager (e.g., `brew install tesseract` on MacOS).
 
 2. **Install Poppler**:
-   - Windows: Download Poppler and configure the path.
-   - MacOS/Linux: Install via brew or apt.
+   - Windows: Download Poppler and configure the path:
+     ```python
+     poppler_path = r"C:\poppler-24.08.0\Library\bin"
+     ```
+   - MacOS/Linux: Install via brew or apt:
+     ```bash
+     brew install poppler
+     ```
 
 ### Backend Deployment
 
@@ -216,5 +234,6 @@ We chose Tesseract for final deployment because it is:
 
 The OCR-Benchmarker project has allowed for an objective comparison of three OCR engines, development of an intuitive interface for file and result management, and construction of a robust database for storing analyses. The technological choices made ensure a good balance between processing speed and result accuracy.
 
+---
 
-
+For any questions or contributions, please open an issue or submit a pull request.
